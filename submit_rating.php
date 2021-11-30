@@ -5,17 +5,17 @@ $connect = new PDO("mysql:host=localhost;dbname=projectcnw_db", "root", "");
 if(isset($_POST["rating_data"])){
 
 	$data = array(
-		'user_name'	=> $_POST["user_name"],
-		'user_rating' => $_POST["rating_data"],
-		'user_review' => $_POST["user_review"],
-		'current_index'	=> $_POST["current_index"],
-		'datetime' => time()
+		':user_name'	=> $_POST["user_name"],
+		':user_rating' => $_POST["rating_data"],
+		':user_review' => $_POST["user_review"],
+		':current_index'	=> $_POST["current_index"],
+		':datetime' => time()
 	);
 
 	$sql = "
 	INSERT INTO review_table 
 	(cid,user_name, user_rating, user_review, datetime) 
-	VALUES (current_index, user_name, user_rating, user_review, datetime)
+	VALUES (:current_index, :user_name, :user_rating, :user_review, :datetime)
 	";
 
 	$statement = $connect->prepare($sql);
