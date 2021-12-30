@@ -15,6 +15,12 @@
     if (isset($_SESSION['account'])){
         $user = $_SESSION['account'];
     }
+
+    if($user['role'] == 1) {
+        echo '<script>alert("❌Bạn không thể thực hiện chức năng với tài khoản này!")</script>';
+        echo"<script>window.location = 'index.php'</script>";
+    }
+
     $sql = 'SELECT * FROM grab_content ORDER BY id DESC LIMIT 1';
     $resultLast = select_one($sql);
 ?>

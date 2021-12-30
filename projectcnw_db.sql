@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 09, 2021 at 07:24 AM
+-- Generation Time: Dec 13, 2021 at 01:43 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,11 +20,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `projectcnw_db`
 --
+CREATE DATABASE IF NOT EXISTS `projectcnw_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `projectcnw_db`;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `contact`
+--
+-- Creation: Nov 09, 2021 at 05:35 AM
+-- Last update: Nov 09, 2021 at 05:35 AM
 --
 
 DROP TABLE IF EXISTS `contact`;
@@ -38,6 +43,9 @@ CREATE TABLE IF NOT EXISTS `contact` (
 
 --
 -- Table structure for table `grab_category`
+--
+-- Creation: Nov 06, 2021 at 11:40 AM
+-- Last update: Nov 08, 2021 at 08:52 AM
 --
 
 DROP TABLE IF EXISTS `grab_category`;
@@ -78,6 +86,9 @@ INSERT INTO `grab_category` (`id`, `name`, `icon_name`, `more`, `body`) VALUES
 
 --
 -- Table structure for table `grab_content`
+--
+-- Creation: Nov 06, 2021 at 02:27 PM
+-- Last update: Nov 09, 2021 at 05:53 AM
 --
 
 DROP TABLE IF EXISTS `grab_content`;
@@ -195,6 +206,9 @@ INSERT INTO `grab_content` (`id`, `cid`, `title`, `product_code`, `rate_qnt`, `c
 --
 -- Table structure for table `mvc_user`
 --
+-- Creation: Nov 07, 2021 at 02:30 AM
+-- Last update: Nov 09, 2021 at 03:02 AM
+--
 
 DROP TABLE IF EXISTS `mvc_user`;
 CREATE TABLE IF NOT EXISTS `mvc_user` (
@@ -223,6 +237,9 @@ INSERT INTO `mvc_user` (`id`, `role`, `username`, `password`, `phone`, `email`, 
 
 --
 -- Table structure for table `review_table`
+--
+-- Creation: Nov 06, 2021 at 01:06 PM
+-- Last update: Nov 09, 2021 at 05:00 AM
 --
 
 DROP TABLE IF EXISTS `review_table`;
@@ -253,6 +270,9 @@ INSERT INTO `review_table` (`review_id`, `cid`, `user_name`, `user_rating`, `use
 
 --
 -- Table structure for table `showrooms`
+--
+-- Creation: Nov 06, 2021 at 11:44 AM
+-- Last update: Nov 08, 2021 at 01:19 PM
 --
 
 DROP TABLE IF EXISTS `showrooms`;
@@ -287,6 +307,9 @@ INSERT INTO `showrooms` (`id`, `name`, `location`, `contacts`, `insurance`, `ema
 
 --
 -- Table structure for table `sub_cate`
+--
+-- Creation: Nov 06, 2021 at 12:50 PM
+-- Last update: Nov 08, 2021 at 12:44 AM
 --
 
 DROP TABLE IF EXISTS `sub_cate`;
@@ -346,6 +369,9 @@ INSERT INTO `sub_cate` (`id`, `cid`, `name`, `content`) VALUES
 --
 -- Table structure for table `user_order`
 --
+-- Creation: Nov 08, 2021 at 08:00 AM
+-- Last update: Dec 11, 2021 at 02:21 PM
+--
 
 DROP TABLE IF EXISTS `user_order`;
 CREATE TABLE IF NOT EXISTS `user_order` (
@@ -357,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `user_order` (
   `pay_mode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `create at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user_order`
@@ -372,7 +398,8 @@ INSERT INTO `user_order` (`order_id`, `buyer_id`, `product_code`, `qnt`, `price`
 (34, 1, 'RAKT266', 2, '1179000', 'COD', '2021-11-08 20:32:35'),
 (35, 15, 'LTDL273', 2, '20489000', 'online', '2021-11-08 21:36:49'),
 (36, 15, 'LTDL225', 1, '15289000', 'online', '2021-11-08 21:36:49'),
-(37, 1, 'PCGM405', 2, '15099000', 'COD', '2021-11-09 12:25:00');
+(37, 1, 'PCGM405', 2, '15099000', 'COD', '2021-11-09 12:25:00'),
+(38, 1, 'BOCH133', 2, '759000', 'COD', '2021-12-11 21:21:43');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

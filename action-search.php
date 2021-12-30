@@ -7,8 +7,9 @@
         if (strpos($sql_search, '#') !== false) {
             $sql_search = substr_replace($sql_search ,"", -1);
         }
-        // echo strlen($sql_search);exit();
+        // echo strlen($sql_search);
         $q = substr($sql_search, 44, 1);
+        // echo $q;exit();
         if ($q){
             $cond = "where (title like '%{$q}%'";
             $cond .= " or product_info like '%{$q}%'";

@@ -77,7 +77,7 @@
             <th>Product Info</th>
             <th>Start price</th>
             <th>Price</th>
-            <th>Sale</th>
+            <th>Số lượng</th>
             <th>Insurance</th>
             <th>Description</th>
             <th>Edit</th>
@@ -85,17 +85,17 @@
         </tr>
         <?php foreach ($result as $item) {?>
         <tr>
-            <td><?php echo $item['id'];?></td>
-            <td><?php echo $item['title'];?></td>
-            <td><?php echo $item['product_code'];?></td>
-            <td><?php echo $item['product_info'];?></td>
-            <td><?php echo $item['start_price'];?></td>
+            <td><?php echo $item['id']?></td>
+            <td><?php echo $item['title']?></td>
+            <td><?php echo $item['product_code']?></td>
+            <td><?php echo $item['product_info']?></td>
+            <td><?php echo $item['start_price']?></td>
             <td><?php echo number_format($item['price'],0,'.','.').'đ'?></td>
-            <td><?php echo $item['sale'];?></td>
-            <td><?php echo $item['insurance'];?></td>
-            <td><?php echo $item['description'];?></td>
-            <td><a href="edit.php?id=<?php echo $item['id'];?>">Edit</a></td>
-            <td><a href="delete.php?id=<?php echo $item['id'];?>">Delete</a></td>
+            <td><?php echo $item['view_qnt']?></td>
+            <td><?php echo $item['insurance']?></td>
+            <td><?php echo $item['description']?></td>
+            <td><a href="edit.php?id=<?php echo $item['id']?>"><i class="fas fa-edit"></a></td>
+            <td><a href="delete.php?id=<?php echo $item['id']?>"><i class="fas fa-trash-alt"></a></td>
         </tr>
         <?php } ?>
         </table>
